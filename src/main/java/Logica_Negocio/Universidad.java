@@ -17,10 +17,6 @@ public class Universidad {
         
     }
     //Constructor parametrizado
-
-   
-  
-
     public Universidad(String Nombre, String Nit, ArrayList<Estudiante> lsestudiantes) {
         this.Nombre = Nombre;
         this.Nit = Nit;
