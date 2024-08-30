@@ -4,6 +4,7 @@ import Helpers.HelperValidacion;
 import Logica_Negocio.Universidad;
 import Logica_Negocio.Estudiante;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 /**
  *
@@ -16,14 +17,25 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int num_es,rts,conteo;
+        int num_es = 0,rts,conteo;
         String nombre_es, identi;
         String nombre,nit;
         ArrayList<Estudiante> lsestudiantes = new ArrayList<>();
         Scanner scan = new Scanner (System.in);
-       
-        System.out.println("Digite el numero de estudiantes");
-        num_es=scan.nextInt();
+       //Empieza el numero de estudiantes
+        do {            
+            try {
+                System.out.println("Digite el numero de estudiantes");
+                num_es = scan.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Error pelao");
+            }
+            scan.nextLine();
+        } while (num_es <= 0);
+       // System.out.println("Digite el numero de estudiantes");
+        //num_es=scan.nextInt();
+        
+        //Termina el numero de estudiantes
         
         scan.nextLine();
         
